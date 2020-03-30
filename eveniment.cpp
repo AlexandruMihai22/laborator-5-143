@@ -3,12 +3,14 @@
 
 unsigned Eveniment::count = 0;
 
-
-Eveniment::Eveniment (const string n, const string l, const Data dt, const unsigned dr) :
-    nume(n), locatie(l), data(dt), durata(dr)
-{
+Eveniment::Eveniment() {
     count++;
     this->ID = "EV-I" + to_string(count);
+}
+
+Eveniment::Eveniment(const string n, const string l, const Data dt, const unsigned dr) :
+    Eveniment(); nume(n), locatie(l), data(dt), durata(dr)
+{
 }
 
 ostream& operator<< (ostream& out, const Eveniment& e) {
@@ -22,7 +24,9 @@ ostream& operator<< (ostream& out, const Eveniment& e) {
 }
 
 istream& operator>> (istream& in, Eveniment& e) {
-    string nume;
-    in >> nume;
-
+    in >> e.nume;
+    in >> e.data.minut >> e.data.ora >> e.data.zi >> e.data.luna >> e.data.an;
+    in >> e.locatie;
+    in >> e.durata;
+    return in;
 }

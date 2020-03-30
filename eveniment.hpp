@@ -1,6 +1,7 @@
 #ifndef _EVENIMENT_H_
 #define _EVENIMENT_H_
 
+#include <iostream>
 #include <string>
 
 using namespace std;
@@ -21,6 +22,7 @@ protected:
     static unsigned count;
 
 public:
+    Eveniment();
     Eveniment (const string, const string, const Data, const unsigned = 60);
 
     friend ostream& operator<< (ostream&, const Eveniment&);
