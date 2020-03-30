@@ -24,7 +24,7 @@ public:
     Eveniment (const string, const string, const Data, const unsigned = 60);
 
     friend ostream& operator<< (ostream&, const Eveniment&);
-    friend istream& operator>> (istream&, const Eveniment&);
+    friend istream& operator>> (istream&, Eveniment&);
 };
 
 
